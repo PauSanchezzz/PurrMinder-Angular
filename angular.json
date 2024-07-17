@@ -45,12 +45,16 @@
                   "maximumError": "4kB"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "ssr": false,
+              "prerender": false
             },
             "development": {
               "optimization": false,
               "extractLicenses": false,
-              "sourceMap": true
+              "sourceMap": true,
+              "ssr": false,
+              "prerender": false
             }
           },
           "defaultConfiguration": "production"
@@ -92,5 +96,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }
