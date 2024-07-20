@@ -1,0 +1,18 @@
+<app-header />
+
+<article class="py-14">
+  <div class="flex items-center justify-center pt-[68px]">
+    <h2 class="font-extrabold text-3xl tracking-wide text-center max-md:text-4xl max-md:mr-2 text-darkPinkText">
+      Recomendaciones</h2>
+  </div>
+
+  <section class="grid grid-cols-3 place-items-center gap-8 pt-12 max-sm:grid-cols-1">
+    @for (recomendation of Recomendations; track $index) {
+    <app-recomendation-card [url]="recomendation.url" [borderColor]="recomendation.borderColor"
+      [circleColor]="recomendation.circleColor" [imageRecomendation]="recomendation.imageRecomendation"
+      [title]="recomendation.title" />
+    }
+  </section>
+</article>
+
+<app-footer />
