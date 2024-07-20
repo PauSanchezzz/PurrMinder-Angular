@@ -1,9 +1,9 @@
-<div class="flex items-center justify-center py-9">
+<div class="flex items-center justify-center py-9 max-sm:py-1 max-sm:mx-5">
   <img class="w-28 mr-4 max-md:mr-2" src="/svg/cat.svg" alt="">
   <h2 class="font-extrabold text-3xl tracking-wide text-center max-md:text-4xl max-md:mr-2 text-darkPinkText">¿Qué podrás hacer aquí?</h2>
 </div>
 
-<article class="grid grid-cols-4 place-items-center">
+<article class="grid grid-cols-4 place-items-center max-sm:grid-cols-1">
   @for (service of Services; track $index) {
   <app-our-services-card [imageService]="service.imageService" [titleService]="service.titleService"
     [description]="service.description" />
