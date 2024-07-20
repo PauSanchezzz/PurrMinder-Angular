@@ -8,6 +8,9 @@ module.exports = {
         darkPinkText: "#660C44",
         lightPink: "#C8759F",
       },
+      dropShadow: {
+        darkPinkText: "0 5px 20px #660C44",
+      },
     },
   },
   plugins: [],
