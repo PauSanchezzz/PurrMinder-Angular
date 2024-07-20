@@ -10,3 +10,12 @@
   background: #660C44;
   border-radius: 50px;
 }
+
+section[id] {
+  scroll-margin-top: 70px;
+}
+
+html
+{
+  scroll-behavior: smooth;
+}
