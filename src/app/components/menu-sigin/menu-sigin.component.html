@@ -1,0 +1,25 @@
+<app-header />
+<div class="flex flex-col items-center justify-center min-h-screen">
+  <h2 class="text-5xl font-extrabold text-darkPinkText text-center pb-24 max-sm:text-4xl max-sm:pt-24 max-sm:pb-8">Selecciona tu Rol</h2>
+  <section class="grid grid-cols-2 gap-56 max-sm:grid-cols-1 max-sm:gap-16">
+    <a href="/UserSigin" class="transition ease-in-out delay-150 hover:-translate-y-2 hover:scale-100 hover:drop-shadow-lightPinkText">
+      <article class="grid gap-5 ">
+        <div
+          class="flex flex-col w-60 h-60 rounded-full border-[3px] border-[#D486B2] bg-lightPinkSecond justify-center items-center">
+          <img class="w-52 h-72" src="/svg/adoptante.svg" alt="">
+        </div>
+        <h2 class="text-3xl font-bold text-darkPinkText text-center">Adoptante</h2>
+      </article>
+    </a>
+    <a href="/ShelterSigin" class="transition ease-in-out delay-150 hover:-translate-y-2 hover:scale-100 hover:drop-shadow-lightPinkText">
+      <article class="grid gap-5 max-sm:pb-10">
+        <div
+          class="flex flex-col w-60 h-60 rounded-full border-[3px] border-[#D486B2] bg-lightPinkSecond justify-center items-center">
+          <img class="w-48 h-48" src="/svg/hogardepaso.svg" alt="">
+        </div>
+        <h2 class="text-3xl font-bold text-darkPinkText text-center">Hogar de Paso</h2>
+      </article>
+    </a>
+  </section>
+</div>
+<app-footer />

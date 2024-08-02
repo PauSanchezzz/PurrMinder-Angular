@@ -1,0 +1,71 @@
+<app-header />
+<div class="flex flex-col items-center justify-center min-h-screen pt-20 max-sm:mx-6 max-sm:pt-10">
+  <h2 class="text-5xl font-extrabold text-darkPinkText text-center max-sm:text-4xl">Iniciar Sesión</h2>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()"
+    class="flex flex-col items-center justify-center py-14 max-sm:py-8">
+    <section class="">
+
+      @if
+      (loginForm.get('email')?.hasError('required') && loginForm.get('email')?.touched) {
+      <p class="text-xl font-bold text-red-600 pb-6">Correo:</p>
+      <input type="email" id="email" formControlName="email"
+        class="bg-gray-50 border border-red-500 text-lg rounded-full block p-3 focus:outline-none focus:ring focus:ring-red-100 text-center w-96 max-sm:w-80"
+        placeholder="ejemplo@correo.com" required />
+      <div class="form-error text-red-600 font-medium pl-2 pt-3">Oops! Correo requerido.</div>
+      }@else if(loginForm.get('email')?.hasError('email') && loginForm.get('email')?.touched){
+
+      <p class="text-xl font-bold text-red-600 pb-6">Correo:</p>
+      <input type="email" id="email" formControlName="email"
+        class="bg-gray-50 border border-red-500 text-lg rounded-full block p-3 focus:outline-none focus:ring focus:ring-red-100 text-center w-96 max-sm:w-80"
+        placeholder="ejemplo@correo.com" required />
+      <div class="form-error text-red-600 font-medium pl-2 pt-3">Oops! El correo ingresado no es válido.</div>
+
+      }@else {
+      <p class="text-xl font-bold text-darkPinkText pb-6">Correo:</p>
+      <input type="email" id="email" formControlName="email"
+        class="bg-gray-50 border border-pink-900 text-lg rounded-full block p-3 focus:outline-none focus:ring focus:ring-pink-100 text-center w-96 max-sm:w-80"
+        placeholder="ejemplo@correo.com" required />
+      }
+
+    </section>
+    <section class="grid pt-8">
+
+      @if (loginForm.get('password')?.hasError('required') && loginForm.get('password')?.touched) {
+      <p class="text-xl font-bold text-red-600 pb-6">Contraseña:</p>
+      <input type="password" id="password" formControlName="password"
+        class="bg-gray-50 border border-red-500 text-lg rounded-full block p-3 focus:outline-none focus:ring focus:ring-red-100 text-center w-96 max-sm:w-80"
+        placeholder="•••••••••" required />
+      <div class="form-error text-red-600 font-medium pl-2 pt-3">Oops! Contraseña requerida.</div>
+
+      }@else if(loginForm.get('password')?.hasError('minlength') && loginForm.get('password')?.touched){
+      <p class="text-xl font-bold text-red-600 pb-6">Contraseña:</p>
+      <input type="password" id="password" formControlName="password"
+        class="bg-gray-50 border border-red-500 text-lg rounded-full block p-3 focus:outline-none focus:ring focus:ring-red-100 text-center w-96 max-sm:w-80"
+        placeholder="•••••••••" required />
+      <div class="form-error text-red-600 font-medium pl-2 pt-3">Oops! Minimo ingresa 6 caracteres.</div>
+      }@else {
+
+      <p class="text-xl font-bold text-darkPinkText pb-6">Contraseña:</p>
+      <input type="password" id="password" formControlName="password"
+        class="bg-gray-50 border border-pink-900 text-lg rounded-full block p-3 focus:outline-none focus:ring focus:ring-pink-100 text-center w-96 max-sm:w-80"
+        placeholder="•••••••••" required />
+      }
+    </section>
+    <button type="submit"
+      class="mt-9 bg-lightPinkSecond border-2 border-lightPink py-2 px-8 rounded-lg font-bold text-darkPinkText hover:bg-lightPink hover:border-darkPinkText hover:text-white transition ease-in-out delay-150 hover:-translate-y-1">
+      Iniciar Sesión
+    </button>
+  </form>
+  <section class="flex items-center text-gray-400 ">
+    <hr class="border-gray-400 w-96 max-sm:w-36" />
+    <p class="text-center txt-sm px-10">Ó</p>
+    <hr class="border-gray-400 w-96 max-sm:w-36" />
+  </section>
+  <section class="text-base grid grid-cols-2 place-content-center text-center gap-8 pt-5  text-darkPinkText">
+    <p class="place-self-center">¿No tienes cuenta aún? ¡Crea una ahora!</p>
+    <button
+      class="py-2 px-5 text-darkPinkText bg-lightPinkSecond border-[1.2px] border-darkPinkText rounded-lg font-bold transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-100 hover:bg-darkPinkText hover:text-white w-36 place-self-center">
+      <a href="/menuSigin"> Registrate</a>
+    </button>
+  </section>
+</div>
