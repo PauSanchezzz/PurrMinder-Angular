@@ -7,7 +7,6 @@ import { FooterComponent } from '../footer/footer.component';
   standalone: true,
   imports: [HeaderComponent, FooterComponent],
   templateUrl: './menu-sigin.component.html',
-  styleUrl: './menu-sigin.component.css',
 })
 export class MenuSiginComponent {
   Recomendations = [

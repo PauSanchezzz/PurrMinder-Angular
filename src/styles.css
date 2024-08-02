@@ -7,7 +7,7 @@
 }
 
 #main::-webkit-scrollbar-thumb {
-  background: #660C44;
+  background: #660c44;
   border-radius: 50px;
 }
 
@@ -15,7 +15,18 @@ section[id] {
   scroll-margin-top: 70px;
 }
 
-html
-{
+html {
   scroll-behavior: smooth;
+}
+
+@layer components {
+  .inputStyle {
+    @apply bg-gray-50 border border-pink-900 text-lg rounded-full block p-[6px] focus:outline-none focus:ring focus:ring-pink-100 text-center w-full;
+  }
+  .selectStyle {
+    @apply text-center bg-gray-50 border border-pink-900 text-lg rounded-full focus:outline-none focus:ring focus:ring-pink-100 block w-full p-[6px];
+  }
+  .titleStyle {
+    @apply text-lg font-bold text-darkPinkText pb-2;
+  }
 }

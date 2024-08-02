@@ -1,46 +1,41 @@
 <app-header />
-<div class="flex flex-col items-center justify-center min-h-screen pt-28 max-sm:mx-6 max-sm:pt-10">
+<div class="flex flex-col items-center justify-center min-h-screen pt-28 max-sm:mx-6 max-sm:pt-28">
   <h2 class="text-5xl font-extrabold text-darkPinkText text-center max-sm:text-4xl">Regístrate</h2>
   <form [formGroup]="userSiginForm" (ngSubmit)="onSubmit()"
     class="flex flex-col items-center justify-center pt-14 max-sm:py-8">
 
-    <section class="grid grid-cols-3 gap-5 w-[80rem]">
+    <section class="grid grid-cols-3 gap-5 w-[80rem] max-sm:grid-cols-1 max-sm:w-full">
 
-      <section class="h-10">
-        <p class="text-lg font-bold text-darkPinkText pb-2">Correo:</p>
-        <input type="email" id="email" formControlName="email "
-          class="bg-gray-50 border border-pink-900 text-lg rounded-full block p-[6px] focus:outline-none focus:ring focus:ring-pink-100 text-center w-full"
-          placeholder="ejemplo@correo.com" required />
+      <section class="h-10 ">
+        <p class="titleStyle">Correo:</p>
+        <input type="email" id="email" formControlName="email" class="inputStyle" placeholder="ejemplo@correo.com"
+          required />
         @if(userSiginForm.get('email')?.hasError('required') && userSiginForm.get('email')?.touched){
         <div class="form-error text-red-600 font-medium pl-2 ">Oops! Correo requerido.</div>
         }
       </section>
 
-      <section class="h-10">
-        <p class="text-lg font-bold text-darkPinkText pb-2">Nombre:</p>
-        <input type="text" id="userName" formControlName="userName"
-          class="bg-gray-50 border border-pink-900 text-lg rounded-full block p-[6px] focus:outline-none focus:ring focus:ring-pink-100 text-center w-full"
-          placeholder="Nombre" required />
+      <section class="h-10 max-sm:mt-9">
+        <p class="titleStyle">Nombre:</p>
+        <input type="text" id="userName" formControlName="userName" class="inputStyle" placeholder="Nombre" required />
         @if(userSiginForm.get('email')?.hasError('required') && userSiginForm.get('userName')?.touched){
         <div class="form-error text-red-600 font-medium pl-2 ">Oops! Nombre requerido.</div>
         }
       </section>
 
-      <section class="h-10">
-        <p class="text-lg font-bold text-darkPinkText pb-2">Apellido:</p>
-        <input type="text" id="userLastName" formControlName="userLastName"
-          class="bg-gray-50 border border-pink-900 text-lg rounded-full block p-[6px] focus:outline-none focus:ring focus:ring-pink-100 text-center w-full"
-          placeholder="Apellido" required />
+      <section class="h-10 max-sm:mt-9">
+        <p class="titleStyle">Apellido:</p>
+        <input type="text" id="userLastName" formControlName="userLastName" class="inputStyle" placeholder="Apellido"
+          required />
         @if(userSiginForm.get('userLastName')?.hasError('required') && userSiginForm.get('userLastName')?.touched){
         <div class="form-error text-red-600 font-medium pl-2 ">Oops! Apellido requerido.</div>
         }
       </section>
 
       <section class="h-10 mt-11">
-        <p class="text-lg font-bold text-darkPinkText pb-2">Contraseña:</p>
-        <input type="password" id="password" formControlName="password"
-          class="bg-gray-50 border border-pink-900 text-lg rounded-full block p-[6px] focus:outline-none focus:ring focus:ring-pink-100 text-center w-full"
-          placeholder="•••••••••" required />
+        <p class="titleStyle">Contraseña:</p>
+        <input type="password" id="password" formControlName="password" class="inputStyle" placeholder="•••••••••"
+          required />
         @if (userSiginForm.get('password')?.hasError('required') && userSiginForm.get('password')?.touched) {
         <div class="form-error text-red-600 font-medium pl-2">Oops! Contraseña requerida.</div>
         }@else if(userSiginForm.get('password')?.hasError('minlength') && userSiginForm.get('password')?.touched){
@@ -49,10 +44,9 @@
       </section>
 
       <section class="h-10 mt-11">
-        <p class="text-lg font-bold text-darkPinkText pb-2">Tipo de Documento:</p>
+        <p class="titleStyle">Tipo de Documento:</p>
 
-        <select id="documentType" formControlName="documentType"
-          class="text-center bg-gray-50 border border-pink-900 text-lg rounded-full focus:outline-none focus:ring focus:ring-pink-100 block w-full p-[6px]">
+        <select id="documentType" formControlName="documentType" class="selectStyle">
           <option selected>Choose a country</option>
           <option value="US">United States</option>
           <option value="CA">Canada</option>
@@ -60,14 +54,13 @@
           <option value="DE">Germany</option>
         </select>
         @if(userSiginForm.get('documentType')?.hasError('required') && userSiginForm.get('documentType')?.touched){
-        <div class="form-error text-red-600 font-medium pl-2">Oops! Debes seleccionar un tipo de documento.</div>
+        <div class="form-error text-red-600 font-medium pl-2">Oops! Selecciona un tipo de documento.</div>
         }
       </section>
 
       <section class="h-10 mt-11">
-        <p class="text-lg font-bold text-darkPinkText pb-2">Numero de Documento:</p>
-        <input type="number" id="documentNumber" formControlName="documentNumber"
-          class="bg-gray-50 border border-pink-900 text-lg rounded-full block p-[6px] focus:outline-none focus:ring focus:ring-pink-100 text-center w-full"
+        <p class="titleStyle">Numero de Documento:</p>
+        <input type="number" id="documentNumber" formControlName="documentNumber" class="inputStyle"
           placeholder="1000245321" required />
         @if(userSiginForm.get('documentNumber')?.hasError('required') && userSiginForm.get('documentNumber')?.touched){
         <div class="form-error text-red-600 font-medium pl-2">Oops! Número de documento requerido.</div>
@@ -75,20 +68,17 @@
       </section>
 
       <section class="h-10 mt-11">
-        <p class="text-lg font-bold text-darkPinkText pb-2">Fecha Nacimiento:</p>
-        <input type="date" id="userBirthdate" formControlName="userBirthdate"
-          class=" bg-gray-50 border border-pink-900 text-lg rounded-full block p-[6px] focus:outline-none focus:ring focus:ring-pink-100 text-center w-full"
-          required />
+        <p class="titleStyle">Fecha Nacimiento:</p>
+        <input type="date" id="userBirthdate" formControlName="userBirthdate" class=" inputStyle" required />
         @if(userSiginForm.get('userBirthdate')?.hasError('required') && userSiginForm.get('userBirthdate')?.touched){
         <div class="form-error text-red-600 font-medium pl-2">Oops! Fecha de nacimiento requerida.</div>
         }
       </section>
 
       <section class="h-10 mt-11">
-        <p class="text-lg font-bold text-darkPinkText pb-2">Ciudad de Residencia:</p>
+        <p class="titleStyle">Ciudad de Residencia:</p>
 
-        <select id="city" id="cityUser" formControlName="cityUser"
-          class="text-center bg-gray-50 border border-pink-900 text-lg rounded-full focus:outline-none focus:ring focus:ring-pink-100 block w-full p-[6px]">
+        <select id="city" id="cityUser" formControlName="cityUser" class="selectStyle">
           <option selected>Choose a country</option>
           <option value="US">United States</option>
           <option value="CA">Canada</option>
@@ -101,10 +91,9 @@
       </section>
 
       <section class="h-10 mt-11">
-        <p class="text-lg font-bold text-darkPinkText pb-2">Telefono:</p>
-        <input type="number" id="phoneUser" formControlName="phoneUser"
-          class="bg-gray-50 border border-pink-900 text-lg rounded-full block p-[6px] focus:outline-none focus:ring focus:ring-pink-100 text-center w-full"
-          placeholder="3214567890" required />
+        <p class="titleStyle">Telefono:</p>
+        <input type="number" id="phoneUser" formControlName="phoneUser" class="inputStyle" placeholder="3214567890"
+          required />
         @if(userSiginForm.get('phoneUser')?.hasError('required') && userSiginForm.get('phoneUser')?.touched){
         <div class="form-error text-red-600 font-medium pl-2">Oops! Telefono requerido.</div>
         }
@@ -112,9 +101,8 @@
 
 
       <section class="h-10 mt-11">
-        <p class="text-lg font-bold text-darkPinkText pb-2">Dirección de Residencia:</p>
-        <input type="text" id="addressUser" formControlName="addressUser"
-          class="bg-gray-50 border border-pink-900 text-lg rounded-full block p-[6px] focus:outline-none focus:ring focus:ring-pink-100 text-center w-full"
+        <p class="titleStyle">Dirección de Residencia:</p>
+        <input type="text" id="addressUser" formControlName="addressUser" class="inputStyle"
           placeholder="Calle 20 Norte # 20-40" required />
         @if(userSiginForm.get('addressUser')?.hasError('required') && userSiginForm.get('addressUser')?.touched){
         <div class="form-error text-red-600 font-medium pl-2">Oops! Dirección requerido.</div>
@@ -122,10 +110,9 @@
       </section>
 
       <section class="h-10 mt-11">
-        <p class="text-lg font-bold text-darkPinkText pb-2">Ocupación:</p>
+        <p class="titleStyle">Ocupación:</p>
 
-        <select id="occupationUser" formControlName="occupationUser"
-          class="text-center bg-gray-50 border border-pink-900 text-lg rounded-full focus:outline-none focus:ring focus:ring-pink-100 block w-full p-[6px]">
+        <select id="occupationUser" formControlName="occupationUser" class="selectStyle">
           <option selected>Choose a country</option>
           <option value="US">United States</option>
           <option value="CA">Canada</option>
@@ -145,7 +132,7 @@
       Regístrate
     </button>
   </form>
-  <section class="flex items-center text-gray-400 pt-8">
+  <section class="flex items-center text-gray-400 pt-8 max-sm:pt-1">
     <hr class="border-gray-400 w-96 max-sm:w-36" />
     <p class="text-center txt-sm px-10">Ó</p>
     <hr class="border-gray-400 w-96 max-sm:w-36" />

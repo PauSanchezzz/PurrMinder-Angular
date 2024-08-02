@@ -1,19 +1,18 @@
 import { Component } from '@angular/core';
-import { HeaderComponent } from '../header/header.component';
-import { FooterComponent } from '../footer/footer.component';
 import {
   FormGroup,
   ReactiveFormsModule,
   FormBuilder,
   Validators,
 } from '@angular/forms';
+import { HeaderComponent } from '../../components/header/header.component';
+import { FooterComponent } from '../../components/footer/footer.component';
 
 @Component({
   selector: 'app-user-sigin',
   standalone: true,
   imports: [HeaderComponent, FooterComponent, ReactiveFormsModule],
   templateUrl: './user-sigin.component.html',
-  styleUrl: './user-sigin.component.css',
 })
 export class UserSiginComponent {
   public userSiginForm: FormGroup = this.fb.group({

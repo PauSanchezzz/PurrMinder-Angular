@@ -1,11 +1,11 @@
 import { Routes } from '@angular/router';
 import AppRecomendationsComponent from './components/recomendations/app.recomendations/app.recomendations.component';
-import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './components/login/login.component';
 import { MenuSiginComponent } from './components/menu-sigin/menu-sigin.component';
-import { UserSiginComponent } from './components/user-sigin/user-sigin.component';
-import { ShelterSiginComponent } from './components/shelter-sigin/shelter-sigin.component';
+import { LoginComponent } from './auth/login/login.component';
+import { UserSiginComponent } from './register/user-sigin/user-sigin.component';
+import { ShelterSiginComponent } from './register/shelter-sigin/shelter-sigin.component';
+
 
 export const routes: Routes = [
   {

@@ -14,7 +14,6 @@ import { ModalComponent } from '../../modal/modal.component';
     ModalComponent,
   ],
   templateUrl: './app.recomendations.component.html',
-  styleUrl: './app.recomendations.component.css',
 })
 export default class AppRecomendationsComponent {
   Recomendations = [

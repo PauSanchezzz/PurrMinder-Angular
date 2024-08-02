@@ -6,7 +6,6 @@ import { OurServicesCardComponent } from '../our-services-card/our-services-card
   standalone: true,
   imports: [OurServicesCardComponent],
   templateUrl: './our-services-section.component.html',
-  styleUrl: './our-services-section.component.css',
 })
 export class OurServicesSectionComponent {
   imageService: string = '';

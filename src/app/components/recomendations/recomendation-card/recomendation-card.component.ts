@@ -6,7 +6,6 @@ import { ModalComponent, pepe } from '../../modal/modal.component';
   standalone: true,
   imports: [CommonModule, ModalComponent],
   templateUrl: './recomendation-card.component.html',
-  styleUrl: './recomendation-card.component.css',
 })
 export class RecomendationCardComponent {
   modalComponentInstance = new ModalComponent();

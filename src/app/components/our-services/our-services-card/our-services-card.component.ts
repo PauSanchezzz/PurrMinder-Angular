@@ -6,7 +6,6 @@ import { Component, Input } from '@angular/core';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './our-services-card.component.html',
-  styleUrl: './our-services-card.component.css',
 })
 export class OurServicesCardComponent {
   @Input() imageService: string = '';

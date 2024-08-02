@@ -7,14 +7,13 @@ import {
   OnInit,
   Output,
 } from '@angular/core';
-import { TextRecomendationsComponent } from '../text-recomendations/text-recomendations.component';
+import { TextRecomendationsComponent } from '../recomendations/text-recomendations/text-recomendations.component';
 
 @Component({
   selector: 'app-modal',
   standalone: true,
   imports: [CommonModule, TextRecomendationsComponent],
   templateUrl: './modal.component.html',
-  styleUrls: ['./modal.component.css'],
 })
 export class ModalComponent implements OnInit {
   @Output() closeEvent = new EventEmitter();
