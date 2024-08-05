@@ -3,9 +3,8 @@ import AppRecomendationsComponent from './components/recomendations/app.recomend
 import { HomeComponent } from './home/home.component';
 import { MenuSiginComponent } from './components/menu-sigin/menu-sigin.component';
 import { LoginComponent } from './auth/login/login.component';
-import { UserSiginComponent } from './register/user-sigin/user-sigin.component';
 import { ShelterSiginComponent } from './register/shelter-sigin/shelter-sigin.component';
-
+import UserSiginComponent from './register/user-sigin/user-sigin.component';
 
 export const routes: Routes = [
   {
@@ -25,11 +24,14 @@ export const routes: Routes = [
     component: MenuSiginComponent,
   },
   {
+    /*     path: 'UserSigin',
+    title: 'UserSigin',
+    loadComponent: () => import('./register/user-sigin/user-sigin.component'), */
     path: 'UserSigin',
-    component: UserSiginComponent
+    component: UserSiginComponent,
   },
   {
     path: 'ShelterSigin',
-    component: ShelterSiginComponent
-  }
+    component: ShelterSiginComponent,
+  },
 ];

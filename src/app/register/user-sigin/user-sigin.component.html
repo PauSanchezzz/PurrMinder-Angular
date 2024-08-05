@@ -17,17 +17,17 @@
 
       <section class="h-10 max-sm:mt-9">
         <p class="titleStyle">Nombre:</p>
-        <input type="text" id="userName" formControlName="userName" class="inputStyle" placeholder="Nombre" required />
-        @if(userSiginForm.get('email')?.hasError('required') && userSiginForm.get('userName')?.touched){
+        <input type="text" id="name" formControlName="name" class="inputStyle" placeholder="Nombre" required />
+        @if(userSiginForm.get('name')?.hasError('required') && userSiginForm.get('name')?.touched){
         <div class="form-error text-red-600 font-medium pl-2 ">Oops! Nombre requerido.</div>
         }
       </section>
 
       <section class="h-10 max-sm:mt-9">
         <p class="titleStyle">Apellido:</p>
-        <input type="text" id="userLastName" formControlName="userLastName" class="inputStyle" placeholder="Apellido"
+        <input type="text" id="lastName" formControlName="lastName" class="inputStyle" placeholder="Apellido"
           required />
-        @if(userSiginForm.get('userLastName')?.hasError('required') && userSiginForm.get('userLastName')?.touched){
+        @if(userSiginForm.get('lastName')?.hasError('required') && userSiginForm.get('lastName')?.touched){
         <div class="form-error text-red-600 font-medium pl-2 ">Oops! Apellido requerido.</div>
         }
       </section>
@@ -46,14 +46,14 @@
       <section class="h-10 mt-11">
         <p class="titleStyle">Tipo de Documento:</p>
 
-        <select id="documentType" formControlName="documentType" class="selectStyle">
+        <select id="documentType_id" formControlName="documentType_id" class="selectStyle">
           <option selected>Choose a country</option>
-          <option value="US">United States</option>
+          <option value="1">PruebaTipoDocumento</option>
           <option value="CA">Canada</option>
           <option value="FR">France</option>
           <option value="DE">Germany</option>
         </select>
-        @if(userSiginForm.get('documentType')?.hasError('required') && userSiginForm.get('documentType')?.touched){
+        @if(userSiginForm.get('documentType_id')?.hasError('required') && userSiginForm.get('documentType_id')?.touched){
         <div class="form-error text-red-600 font-medium pl-2">Oops! Selecciona un tipo de documento.</div>
         }
       </section>
@@ -69,8 +69,8 @@
 
       <section class="h-10 mt-11">
         <p class="titleStyle">Fecha Nacimiento:</p>
-        <input type="date" id="userBirthdate" formControlName="userBirthdate" class=" inputStyle" required />
-        @if(userSiginForm.get('userBirthdate')?.hasError('required') && userSiginForm.get('userBirthdate')?.touched){
+        <input type="date" id="birthDate" formControlName="birthDate" class=" inputStyle" required />
+        @if(userSiginForm.get('birthDate')?.hasError('required') && userSiginForm.get('birthDate')?.touched){
         <div class="form-error text-red-600 font-medium pl-2">Oops! Fecha de nacimiento requerida.</div>
         }
       </section>
@@ -78,23 +78,23 @@
       <section class="h-10 mt-11">
         <p class="titleStyle">Ciudad de Residencia:</p>
 
-        <select id="city" id="cityUser" formControlName="cityUser" class="selectStyle">
+        <select id="city" id="city_id" formControlName="city_id" class="selectStyle">
           <option selected>Choose a country</option>
-          <option value="US">United States</option>
+          <option value="1">PruebaCiudad</option>
           <option value="CA">Canada</option>
           <option value="FR">France</option>
           <option value="DE">Germany</option>
         </select>
-        @if(userSiginForm.get('cityUser')?.hasError('required') && userSiginForm.get('cityUser')?.touched){
+        @if(userSiginForm.get('city_id')?.hasError('required') && userSiginForm.get('city_id')?.touched){
         <div class="form-error text-red-600 font-medium pl-2">Oops! Ciudad requerida.</div>
         }
       </section>
 
       <section class="h-10 mt-11">
         <p class="titleStyle">Telefono:</p>
-        <input type="number" id="phoneUser" formControlName="phoneUser" class="inputStyle" placeholder="3214567890"
+        <input type="number" id="telephoneNumber" formControlName="telephoneNumber" class="inputStyle" placeholder="3214567890"
           required />
-        @if(userSiginForm.get('phoneUser')?.hasError('required') && userSiginForm.get('phoneUser')?.touched){
+        @if(userSiginForm.get('telephoneNumber')?.hasError('required') && userSiginForm.get('telephoneNumber')?.touched){
         <div class="form-error text-red-600 font-medium pl-2">Oops! Telefono requerido.</div>
         }
       </section>
@@ -102,9 +102,9 @@
 
       <section class="h-10 mt-11">
         <p class="titleStyle">Dirección de Residencia:</p>
-        <input type="text" id="addressUser" formControlName="addressUser" class="inputStyle"
+        <input type="text" id="address" formControlName="address" class="inputStyle"
           placeholder="Calle 20 Norte # 20-40" required />
-        @if(userSiginForm.get('addressUser')?.hasError('required') && userSiginForm.get('addressUser')?.touched){
+        @if(userSiginForm.get('address')?.hasError('required') && userSiginForm.get('address')?.touched){
         <div class="form-error text-red-600 font-medium pl-2">Oops! Dirección requerido.</div>
         }
       </section>
@@ -112,14 +112,14 @@
       <section class="h-10 mt-11">
         <p class="titleStyle">Ocupación:</p>
 
-        <select id="occupationUser" formControlName="occupationUser" class="selectStyle">
+        <select id="occupation" formControlName="occupation" class="selectStyle">
           <option selected>Choose a country</option>
-          <option value="US">United States</option>
+          <option value="1">PruebaOcupacion</option>
           <option value="CA">Canada</option>
           <option value="FR">France</option>
           <option value="DE">Germany</option>
         </select>
-        @if(userSiginForm.get('occupationUser')?.hasError('required') && userSiginForm.get('occupationUser')?.touched){
+        @if(userSiginForm.get('occupation')?.hasError('required') && userSiginForm.get('occupation')?.touched){
         <div class="form-error text-red-600 font-medium pl-2">Oops! Ocupación requerida.</div>
         }
       </section>
