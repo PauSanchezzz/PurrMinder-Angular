@@ -19,22 +19,22 @@
 
       <section class="h-10 max-sm:mt-9">
         <p class="titleStyle">Nombre del responsable:</p>
-        <input type="text" id="responsibleName" formControlName="responsibleName"
+        <input type="text" id="name" formControlName="name"
           class="inputStyle"
           placeholder="Nombre" required />
-        @if(shelterSiginForm.get('responsibleName')?.hasError('required') &&
-        shelterSiginForm.get('responsibleName')?.touched){
+        @if(shelterSiginForm.get('name')?.hasError('required') &&
+        shelterSiginForm.get('name')?.touched){
         <div class="form-error text-red-600 font-medium pl-2 ">Oops! Nombre requerido.</div>
         }
       </section>
 
       <section class="h-10 max-sm:mt-9">
         <p class="titleStyle">Apellido del responsable:</p>
-        <input type="text" id="responsibleLastName" formControlName="responsibleLastName"
+        <input type="text" id="lastName" formControlName="lastName"
           class="inputStyle"
           placeholder="Apellido" required />
-        @if(shelterSiginForm.get('responsibleLastName')?.hasError('required') &&
-        shelterSiginForm.get('responsibleLastName')?.touched){
+        @if(shelterSiginForm.get('lastName')?.hasError('required') &&
+        shelterSiginForm.get('lastName')?.touched){
         <div class="form-error text-red-600 font-medium pl-2 ">Oops! Apellido requerido.</div>
         }
       </section>
@@ -54,16 +54,16 @@
       <section class="h-10 mt-9">
         <p class="titleStyle">Tipo de Documento:</p>
 
-        <select id="documentType" formControlName="documentType"
+        <select id="documentType_id" formControlName="documentType_id"
           class="selectStyle">
           <option selected>Choose a country</option>
-          <option value="US">United States</option>
+          <option value="1">prueba</option>
           <option value="CA">Canada</option>
           <option value="FR">France</option>
           <option value="DE">Germany</option>
         </select>
-        @if (shelterSiginForm.get('documentType')?.hasError('required') &&
-        shelterSiginForm.get('documentType')?.touched) {
+        @if (shelterSiginForm.get('documentType_id')?.hasError('required') &&
+        shelterSiginForm.get('documentType_id')?.touched) {
         <div class="form-error text-red-600 font-medium pl-2">Oops! Selecciona un tipo de documento.</div>
         }
       </section>
@@ -81,11 +81,11 @@
 
       <section class="h-10 mt-9">
         <p class="titleStyle">Fecha Nacimiento Responsable:</p>
-        <input type="date" id="responsibleBirthdate" formControlName="responsibleBirthdate"
+        <input type="date" id="birthDate" formControlName="birthDate"
           class=" inputStyle"
           required />
-        @if (shelterSiginForm.get('responsibleBirthdate')?.hasError('required') &&
-        shelterSiginForm.get('responsibleBirthdate')?.touched) {
+        @if (shelterSiginForm.get('birthDate')?.hasError('required') &&
+        shelterSiginForm.get('birthDate')?.touched) {
         <div class="form-error text-red-600 font-medium pl-2">Oops! Fecha de nacimiento requerida.</div>
         }
       </section>
@@ -103,22 +103,22 @@
 
       <section class="h-10 mt-9">
         <p class="titleStyle">Telefono:</p>
-        <input type="number" id="phoneShelter" formControlName="phoneShelter"
+        <input type="number" id="telephoneNumber" formControlName="telephoneNumber"
           class="inputStyle"
           placeholder="3214567890" required />
-        @if (shelterSiginForm.get('phoneShelter')?.hasError('required') &&
-        shelterSiginForm.get('phoneShelter')?.touched) {
+        @if (shelterSiginForm.get('telephoneNumber')?.hasError('required') &&
+        shelterSiginForm.get('telephoneNumber')?.touched) {
         <div class="form-error text-red-600 font-medium pl-2">Oops! Telefono requerido.</div>
         }
       </section>
 
       <section class="h-10 mt-9 col-start-2 max-sm:col-start-1">
         <p class="titleStyle">Dirección del Hogar de Paso:</p>
-        <input type="text" id="addressShelter" formControlName="addressShelter"
+        <input type="text" id="address" formControlName="address"
           class="inputStyle"
           placeholder="Calle 20 Norte # 20-40" required />
-        @if (shelterSiginForm.get('phoneShelter')?.hasError('required') &&
-        shelterSiginForm.get('phoneShelter')?.touched) {
+        @if (shelterSiginForm.get('telephoneNumber')?.hasError('required') &&
+        shelterSiginForm.get('telephoneNumber')?.touched) {
         <div class="form-error text-red-600 font-medium pl-2">Oops! Dirección requerida.</div>
         }
       </section>

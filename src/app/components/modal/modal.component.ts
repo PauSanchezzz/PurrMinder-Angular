@@ -7,7 +7,7 @@ import {
   OnInit,
   Output,
 } from '@angular/core';
-import { TextRecomendationsComponent } from '../recomendations/text-recomendations/text-recomendations.component';
+import { TextRecomendationsComponent } from '../text-recomendations/text-recomendations.component';
 
 @Component({
   selector: 'app-modal',

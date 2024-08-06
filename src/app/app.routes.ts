@@ -1,10 +1,12 @@
 import { Routes } from '@angular/router';
-import AppRecomendationsComponent from './components/recomendations/app.recomendations/app.recomendations.component';
-import { HomeComponent } from './home/home.component';
 import { MenuSiginComponent } from './components/menu-sigin/menu-sigin.component';
-import { LoginComponent } from './auth/login/login.component';
-import { ShelterSiginComponent } from './register/shelter-sigin/shelter-sigin.component';
-import UserSiginComponent from './register/user-sigin/user-sigin.component';
+import { LoginComponent } from './pages/login/login.component';
+import UserSiginComponent from './pages/register/user-sigin/user-sigin.component';
+import ShelterSiginComponent from './pages/register/shelter-sigin/shelter-sigin.component';
+import { AdopteesComponent } from './pages/adoptees/adoptees.component';
+import { HomeComponent } from './pages/home/home.component';
+import AppRecomendationsComponent from './pages/recomendations/app.recomendations.component';
+import { AdoptionsComponent } from './pages/adoptions/adoptions.component';
 
 export const routes: Routes = [
   {
@@ -24,9 +26,6 @@ export const routes: Routes = [
     component: MenuSiginComponent,
   },
   {
-    /*     path: 'UserSigin',
-    title: 'UserSigin',
-    loadComponent: () => import('./register/user-sigin/user-sigin.component'), */
     path: 'UserSigin',
     component: UserSiginComponent,
   },
@@ -34,4 +33,12 @@ export const routes: Routes = [
     path: 'ShelterSigin',
     component: ShelterSiginComponent,
   },
+  {
+    path: 'adoptions',
+    component: AdoptionsComponent,
+  },
+  {
+path: 'adoptees',
+component: AdopteesComponent,
+  }
 ];

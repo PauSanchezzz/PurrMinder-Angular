@@ -1,0 +1,19 @@
+<div class="w-[17rem] h-[17rem] bg-pink-50 border border-pink-200 rounded-lg shadow ">
+  <a href="#">
+    <img class="rounded-t-lg "
+      src="https://images.unsplash.com/photo-1429448348420-186bb50a6e41?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      alt="" />
+  </a>
+  <div class="p-2 text-center">
+    <a href="#" class="flex items-center justify-center">
+      <h5 class="text-2xl font-bold tracking-tight text-gray-900 pr-5">{{nameCat}}</h5>
+      @if(sexCat == 1){
+      <img class="size-5" src="/svg/male.svg" alt="">
+      }
+      @else{
+      <img class="size-5" src="/svg/female.svg" alt="">
+      }
+    </a>
+    <p class="font-normal text-gray-700 pt-1">Edad: <b>{{ageCat}} años</b> | Peso: <b>{{weightCat}} Kg</b></p>
+  </div>
+</div>

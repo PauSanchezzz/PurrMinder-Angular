@@ -7,9 +7,9 @@ export interface User {
   documentNumber: number;
   birthDate: string;
   telephoneNumber: number;
+  nameShelter: string;
   city_id: number;
   address: string;
   role_id: number;
   occupation: number;
 }
-

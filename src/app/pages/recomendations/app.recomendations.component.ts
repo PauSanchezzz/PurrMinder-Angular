@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { HeaderComponent } from '../../header/header.component';
-import { RecomendationCardComponent } from '../recomendation-card/recomendation-card.component';
-import { FooterComponent } from '../../footer/footer.component';
-import { ModalComponent } from '../../modal/modal.component';
+import { HeaderComponent } from '../../components/header/header.component';
+import { RecomendationCardComponent } from '../../components/recomendation-card/recomendation-card.component';
+import { FooterComponent } from '../../components/footer/footer.component';
+import { ModalComponent } from '../../components/modal/modal.component';
+
 
 @Component({
   selector: 'app-app.recomendations',

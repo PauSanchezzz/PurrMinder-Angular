@@ -11,10 +11,10 @@ import {
   FormBuilder,
   Validators,
 } from '@angular/forms';
-import { HeaderComponent } from '../../components/header/header.component';
-import { FooterComponent } from '../../components/footer/footer.component';
-import { User } from '../../interfaces/user.interface';
-import { AuthService } from '../../services/auth.service';
+import { HeaderComponent } from '../../../components/header/header.component';
+import { FooterComponent } from '../../../components/footer/footer.component';
+import { User } from '../../../interfaces/user.interface';
+import { AuthService } from '../../../services/auth.service';
 import { formatDate } from '@angular/common';
 import { Router } from '@angular/router';
 
@@ -30,7 +30,6 @@ import Swal from 'sweetalert2';
 export default class UserSiginComponent implements OnChanges, OnInit {
   @Input() data: User | null = null;
   userSiginForm!: FormGroup;
-  serverErrors: { [key: string]: string } = {};
 
   constructor(
     private fb: FormBuilder,

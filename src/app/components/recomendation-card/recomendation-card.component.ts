@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { ModalComponent, pepe } from '../../modal/modal.component';
+import { ModalComponent,pepe } from '../modal/modal.component';
 @Component({
   selector: 'app-recomendation-card',
   standalone: true,
