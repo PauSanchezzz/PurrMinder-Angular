@@ -7,6 +7,7 @@ import { AdopteesComponent } from './pages/adoptees/adoptees.component';
 import { HomeComponent } from './pages/home/home.component';
 import AppRecomendationsComponent from './pages/recomendations/app.recomendations.component';
 import { AdoptionsComponent } from './pages/adoptions/adoptions.component';
+import { CatRegisterComponent } from './pages/cat-register/cat-register.component';
 
 export const routes: Routes = [
   {
@@ -40,5 +41,9 @@ export const routes: Routes = [
   {
 path: 'adoptees',
 component: AdopteesComponent,
+  },
+  {
+    path: 'catRegister',
+    component: CatRegisterComponent,
   }
 ];
