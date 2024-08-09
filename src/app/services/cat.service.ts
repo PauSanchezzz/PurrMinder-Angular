@@ -20,4 +20,8 @@ export class CatService {
   getCatsAvaliable(): Observable<GetCatsResponse> {
     return this.http.get<GetCatsResponse>(`${this.baseUrl}/cats/catsAdopted`);
   }
+
+    createCat(data: any): Observable<any> {
+  return this.http.post<any>(`${this.baseUrl}/cats/catRegister`, data);
+}
 }

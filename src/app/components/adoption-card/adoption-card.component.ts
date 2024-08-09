@@ -10,7 +10,8 @@ import { Component, Input } from '@angular/core';
 })
 export class AdoptionCardComponent {
   @Input({required:true}) nameCat!: string;
+  @Input({required:true}) imageCat!: String;
   @Input({required:true}) weightCat!: string;
-  @Input({required:true}) sexCat!: number;
+  @Input({required:true}) sexCat_id!: number;
   @Input({required:true}) ageCat!: number;
 }

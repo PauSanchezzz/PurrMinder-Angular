@@ -7,7 +7,7 @@
 
   <section class="pt-10 grid grid-cols-4 gap-5 place-items-center mx-28 max-sm:grid-cols-1 max-sm:mx-0">
     @for (cat of catsAvailable; track cat.id) {
-    <app-adoption-card [nameCat]="cat.nameCat" [sexCat]="cat.sexCat" [ageCat]="cat.ageCat"
+    <app-adoption-card [nameCat]="cat.nameCat" [imageCat]="cat.imageCat" [sexCat_id]="cat.sexCat_id" [ageCat]="cat.ageCat"
       [weightCat]="cat.weightCat" />
     }
   </section>

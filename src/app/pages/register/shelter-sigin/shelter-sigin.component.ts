@@ -90,7 +90,7 @@ export default class ShelterSiginComponent implements OnChanges, OnInit {
             Swal.fire({
               title: 'Registro Fallido',
               text: 'Intente nuevamente',
-              icon: 'success',
+              icon: 'error',
             });
           },
         });

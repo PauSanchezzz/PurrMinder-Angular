@@ -5,10 +5,15 @@ export interface GetCatsResponse {
 export interface Cat {
   id: number;
   nameCat: string;
-  imageCat: string;
+  imageCat: String;
   descriptionCat: string;
   ageCat: number;
+  calendar_id: number;
   weightCat: string;
-  sexCat: number;
+  sexCat_id: number;
+  specialCondition: boolean;
+  specialCondition_id: number;
+  catHealth_id: number;
+  personality_id: number;
   availabilityCat: boolean;
 }

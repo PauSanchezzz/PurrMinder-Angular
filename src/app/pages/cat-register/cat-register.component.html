@@ -6,63 +6,102 @@
       Registro ingreso del Felino</h2>
   </div>
 
-  <form class="flex flex-col justify-center items-center">
+  <form [formGroup]="catRegisterForm" (ngSubmit)="onSubmit()" class="flex flex-col justify-center items-center">
     <section class="grid grid-cols-2 mx-20 pt-[65px] max-sm:grid-cols-1 max-sm:mx-0 max-sm:pt-8">
 
-      <section class="grid gap-5 mr-16 max-sm:mx-5">
+      <section class="grid mr-16 max-sm:mx-5">
+
+        <section class="flex items-center space-x-2 ">
+          <p class="titleFormCatRegister max-sm:text-start">Nombre del felino:</p>
+          <div class="flex-1">
+            <input
+              class="bg-gray-50 border border-pink-900 text-lg rounded-2xl p-[6px] focus:outline-none focus:ring focus:ring-pink-100 text-center w-full"
+              type="text" id="nameCat" formControlName="nameCat" placeholder="Nombre Felino" required />
+            @if(catRegisterForm.get('nameCat')?.hasError('required') && catRegisterForm.get('nameCat')?.touched){
+            <div class="form-error text-red-600 font-medium flex text-center  justify-center">Oops! Nombre requerido.
+            </div>
+            }
+          </div>
+        </section>
 
         <section class="flex items-center space-x-2">
-          <p class="titleFormCatRegister max-sm:text-start">Nombre del felino:</p>
-          <input
-            class="bg-gray-50 border border-pink-900 text-lg rounded-2xl p-[6px] focus:outline-none focus:ring focus:ring-pink-100 text-center flex-1"
-            type="text" id="nombre_felino" placeholder="Nombre Felino" required />
+          <p class="titleFormCatRegister max-sm:text-start">Edad:</p>
+
+          <div class="flex-1 ">
+            <input
+              class="bg-gray-50 border border-pink-900 text-lg rounded-2xl p-[6px] focus:outline-none focus:ring focus:ring-pink-100 text-center flex-1 max-sm:w-5"
+              type="text" placeholder="Edad" required id="ageCat" formControlName="ageCat" />
+            @if(catRegisterForm.get('ageCat')?.hasError('required') && catRegisterForm.get('ageCat')?.touched){
+            <div class="form-error text-red-600 font-medium flex text-center  justify-center">Oops! Edad requerida.
+            </div>
+            }
+          </div>
+          <div class="flex-1">
+            <select id="calendar_id" formControlName="calendar_id"
+              class="text-center bg-gray-50 border border-pink-900 text-lg rounded-2xl focus:outline-none focus:ring focus:ring-pink-100 p-[6px] flex-1 max-sm:w-5">
+              <option selected>Seleccione</option>
+              <option value="1">1 año</option>
+              <option value="2">2 años</option>
+              <option value="3">3 años</option>
+            </select>
+            @if(catRegisterForm.get('calendar_id')?.hasError('required') &&
+            catRegisterForm.get('calendar_id')?.touched){
+            <div class="form-error text-red-600 font-medium flex text-center  justify-center">Oops! Unidad <br />
+              requerida.
+            </div>
+            }
+          </div>
+
         </section>
 
-         <section class="flex items-center space-x-2">
-          <p class="titleFormCatRegister max-sm:text-start">Edad:</p>
-          <input
-            class="bg-gray-50 border border-pink-900 text-lg rounded-2xl p-[6px] focus:outline-none focus:ring focus:ring-pink-100 text-center flex-1 max-sm:w-5"
-            type="text" id="edad_felino" placeholder="Edad" required />
-          <select id="edad_select" formControlName="edad_select"
-            class="text-center bg-gray-50 border border-pink-900 text-lg rounded-2xl focus:outline-none focus:ring focus:ring-pink-100 p-[6px] flex-1 max-sm:w-5">
-            <option selected>Seleccione</option>
-            <option value="1">1 año</option>
-            <option value="2">2 años</option>
-            <option value="3">3 años</option>
-          </select>
-        </section>
         <section class="flex items-center space-x-2">
           <p class="titleFormCatRegister max-sm:text-start">Peso:</p>
-          <input
-            class="bg-gray-50 border border-pink-900 text-lg rounded-2xl p-[6px] focus:outline-none focus:ring focus:ring-pink-100 text-center flex-1 max-sm:w-5"
-            type="text" id="peso_felino" placeholder="Peso" required />
-          <select id="peso_select" formControlName="peso_select"
-            class="text-center bg-gray-50 border border-pink-900 text-lg rounded-2xl focus:outline-none focus:ring focus:ring-pink-100 p-[6px] flex-1 max-sm:w-5">
-            <option selected>Seleccione</option>
-            <option value="1">1 kg</option>
-            <option value="2">2 kg</option>
-            <option value="3">3 kg</option>
-          </select>
+
+          <div class="flex-1">
+            <input
+              class="bg-gray-50 border border-pink-900 text-lg rounded-2xl p-[6px] focus:outline-none focus:ring focus:ring-pink-100 text-center flex-1 max-sm:w-5"
+              type="number" id="weightCat" formControlName="weightCat" placeholder="Peso" required />
+            @if(catRegisterForm.get('weightCat')?.hasError('required') &&
+            catRegisterForm.get('weightCat')?.touched){
+            <div class="form-error text-red-600 font-medium flex text-center  justify-center">Oops! Peso requerido.
+            </div>
+            }
+          </div>
+
+
+          <p class="titleFormCatRegister max-sm:text-start">KG</p>
+
         </section>
         <section class="flex items-center space-x-2">
           <p class="titleFormCatRegister max-sm:text-start">Sexo:</p>
-          <select id="sexo_select" formControlName="sexo_select"
-            class="text-center bg-gray-50 border border-pink-900 text-lg rounded-2xl focus:outline-none focus:ring focus:ring-pink-100 p-[6px] flex-1">
-            <option selected>Seleccione</option>
-            <option value="Macho">Macho</option>
-            <option value="Hembra">Hembra</option>
-          </select>
+
+          <div class="flex-1">
+            <select id="sexCat_id" formControlName="sexCat_id"
+              class="text-center bg-gray-50 border border-pink-900 text-lg rounded-2xl focus:outline-none focus:ring focus:ring-pink-100 p-[6px] w-full">
+              <option selected>Seleccione</option>
+              <option value="1">Macho</option>
+              <option value="2">Hembra</option>
+            </select>
+            @if(catRegisterForm.get('sexCat_id')?.hasError('required') &&
+            catRegisterForm.get('sexCat_id')?.touched){
+            <div class="form-error text-red-600 font-medium flex text-center  justify-center">Oops! Sexo requerido.
+            </div>
+            }
+          </div>
+
+
         </section>
+
         <section class="flex flex-col justify-center items-center">
           <p class="text-lg font-bold text-darkPinkText pb-3">¿Disponible para adopción?</p>
           <div class="grid grid-cols-2 gap-5">
 
             <div class="grid grid-cols-2 gap-2 items-center">
-              <input type="radio" class="w-4 h-4 accent-pink-500" name="colored-radio">
+              <input type="radio" class="w-4 h-4 accent-pink-500" formControlName="availabilityCat" value="true">
               <label for="red-radio" class="text-lg font-bold text-darkPinkText">Sí</label>
             </div>
             <div class="grid grid-cols-2 gap-2 items-center">
-              <input type="radio" class="w-4 h-4 accent-pink-500" name="colored-radio">
+              <input type="radio" class="w-4 h-4 accent-pink-500" formControlName="availabilityCat" value="false">
               <label for="red-radio" class="text-lg font-bold text-darkPinkText">No</label>
             </div>
           </div>
@@ -71,37 +110,71 @@
       <section class="grid gap-5 mr-16 max-sm:mx-5">
         <section class="flex items-center space-x-2">
           <p class="titleFormCatRegister max-sm:text-start">Personalidad:</p>
-          <select id="personalidad" formControlName="personalidad"
-            class="text-center bg-gray-50 border border-pink-900 text-lg rounded-2xl focus:outline-none focus:ring focus:ring-pink-100 p-[6px] flex-1">
-            <option selected>Seleccione</option>
-            <option value="1">Amigable</option>
-            <option value="2">Tímido</option>
-            <option value="3">Juguetón</option>
-          </select>
+
+          <div class="flex-1">
+            <select id="personality_id" formControlName="personality_id"
+              class="text-center bg-gray-50 border border-pink-900 text-lg rounded-2xl focus:outline-none focus:ring focus:ring-pink-100 p-[6px] w-full">
+              <option selected>Seleccione</option>
+              <option value="1">Amigable</option>
+              <option value="2">Tímido</option>
+              <option value="3">Juguetón</option>
+            </select>
+            @if(catRegisterForm.get('personality_id')?.hasError('required') &&
+            catRegisterForm.get('personality_id')?.touched){
+            <div class="form-error text-red-600 font-medium flex text-center  justify-center">Oops! Personalidad
+              requerida.
+            </div>
+            }
+          </div>
+
         </section>
         <section class="flex items-center space-x-2">
           <p class="titleFormCatRegister max-sm:text-start">Descripción:</p>
-          <textarea
-            class="caret-pink-800 bg-gray-50 border border-pink-900 text-lg rounded-2xl focus:outline-none focus:ring focus:ring-pink-100 p-[6px] flex-1 "
-            name="descripcion"></textarea>
+          <div class="flex-1">
+            <textarea
+              class="caret-pink-800 bg-gray-50 border border-pink-900 text-lg rounded-2xl focus:outline-none focus:ring focus:ring-pink-100 p-[6px] w-full"
+              name="descriptionCat" id="descriptionCat" formControlName="descriptionCat"></textarea>
+            @if(catRegisterForm.get('descriptionCat')?.hasError('required') &&
+            catRegisterForm.get('descriptionCat')?.touched){
+            <div class="form-error text-red-600 font-medium flex text-center  justify-center">Oops! Descripción
+              requerida.
+            </div>
+            }
+          </div>
         </section>
         <section class="flex items-center space-x-2">
           <p class="titleFormCatRegister max-sm:text-start">Estado del Felino:</p>
-          <select id="estado_felino" formControlName="estado_felino"
-            class="text-center bg-gray-50 border border-pink-900 text-lg rounded-2xl focus:outline-none focus:ring focus:ring-pink-100 p-[6px] flex-1">
-            <option selected>Seleccione</option>
-            <option value="1">Sano</option>
-            <option value="2">En tratamiento</option>
-            <option value="3">Recuperado</option>
-          </select>
+
+          <div class="flex-1">
+            <select id="catHealth_id" formControlName="catHealth_id"
+              class="text-center bg-gray-50 border border-pink-900 text-lg rounded-2xl focus:outline-none focus:ring focus:ring-pink-100 p-[6px] w-full">
+              <option selected>Seleccione</option>
+              <option value="1">Sano</option>
+              <option value="2">En tratamiento</option>
+              <option value="3">Recuperado</option>
+            </select>
+            @if(catRegisterForm.get('catHealth_id')?.hasError('required') &&
+            catRegisterForm.get('catHealth_id')?.touched){
+            <div class="form-error text-red-600 font-medium flex text-center  justify-center">Oops! Estado requerida.
+            </div>
+            }
+          </div>
+
         </section>
 
         <section class="flex items-center space-x-2">
           <p class="titleFormCatRegister max-sm:text-start">Foto del Felino:</p>
-          <label class="">
-            <input type="file"
-              class=" w-full text-sm font-semibold text-slate-500 file:mr-4 file:py-2 file:px-4 file:border file:border-pink-900 file:rounded-full file:text-sm file:font-semibold file:bg-pink-50 file:text-pink-900 hover:file:bg-pink-100 flex-1" />
-          </label>
+          <div class="flex-1">
+            <label htmlFor="imageCat">
+              <input type="file" (change)="onImagePicked($event)" id="imageCat"
+                class="text-sm font-semibold text-slate-500 file:mr-4 file:py-2 file:px-4 file:border file:border-pink-900 file:rounded-full file:text-sm file:font-semibold file:bg-pink-50 file:text-pink-900 hover:file:bg-pink-100 w-full" />
+            </label>
+            @if(catRegisterForm.get('imageCat')?.hasError('required') &&
+            catRegisterForm.get('imageCat')?.touched){
+            <div class="form-error text-red-600 font-medium flex text-center  justify-center">Oops! Estado requerida.
+            </div>
+            }
+          </div>
         </section>
 
         <section class="flex items-center justify-center max-sm:justify-normal">
@@ -112,18 +185,22 @@
           <div class="grid gap-2">
             <div class="grid grid-cols-2 gap-3 justify-items-center">
               <div class="grid grid-cols-2 gap-2 items-center">
-                <input type="radio" class="w-4 h-4 accent-pink-500" name="colored-radio">
-                <label for="red-radio" class="text-lg font-bold text-darkPinkText">Sí</label>
+                <input type="radio" class="w-4 h-4 accent-pink-500" name="specialCondition" id="specialCondition"
+                  formControlName="specialCondition" value="true">
+                <label for="specialCondition" class="text-lg font-bold text-darkPinkText">Sí</label>
               </div>
               <div class="grid grid-cols-2 gap-2 items-center">
-                <input type="radio" class="w-4 h-4 accent-pink-500" name="colored-radio">
-                <label for="red-radio" class="text-lg font-bold text-darkPinkText">No</label>
+                <input type="radio" class="w-4 h-4 accent-pink-500" name="specialCondition" id="specialCondition"
+                  formControlName="specialCondition" value="false">
+                <label for="specialCondition" class="text-lg font-bold text-darkPinkText">No</label>
               </div>
             </div>
+
+            @if (catRegisterForm.get('specialCondition')!.value === 'true') {
             <div class="flex">
               <p class="text-lg font-bold text-darkPinkText text-centerp pr-4">¿Cúal?</p>
 
-              <select id="detalle_condicion" formControlName="detalle_condicion"
+              <select id="specialCondition_id" formControlName="specialCondition_id"
                 class="text-center bg-gray-50 border border-pink-900 text-lg rounded-2xl focus:outline-none focus:ring focus:ring-pink-100 p-[6px] flex-1 max-sm:flex-none">
                 <option selected>Seleccione</option>
                 <option value="1">Condición A</option>
@@ -131,6 +208,8 @@
                 <option value="3">Condición C</option>
               </select>
             </div>
+            }
+
           </div>
         </section>
 
