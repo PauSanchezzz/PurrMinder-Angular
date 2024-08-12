@@ -40,9 +40,9 @@
             <select id="calendar_id" formControlName="calendar_id"
               class="text-center bg-gray-50 border border-pink-900 text-lg rounded-2xl focus:outline-none focus:ring focus:ring-pink-100 p-[6px] flex-1 max-sm:w-5">
               <option selected>Seleccione</option>
-              <option value="1">1 año</option>
-              <option value="2">2 años</option>
-              <option value="3">3 años</option>
+              @for (item of Calendar; track $index) {
+                <option value="{{item.idCalendar}}">{{item.calendar}}</option>
+              }
             </select>
             @if(catRegisterForm.get('calendar_id')?.hasError('required') &&
             catRegisterForm.get('calendar_id')?.touched){
@@ -79,8 +79,9 @@
             <select id="sexCat_id" formControlName="sexCat_id"
               class="text-center bg-gray-50 border border-pink-900 text-lg rounded-2xl focus:outline-none focus:ring focus:ring-pink-100 p-[6px] w-full">
               <option selected>Seleccione</option>
-              <option value="1">Macho</option>
-              <option value="2">Hembra</option>
+              @for (item of Sex; track $index) {
+                <option value="{{item.idSex}}">{{item.sex}}</option>
+              }
             </select>
             @if(catRegisterForm.get('sexCat_id')?.hasError('required') &&
             catRegisterForm.get('sexCat_id')?.touched){
@@ -115,9 +116,9 @@
             <select id="personality_id" formControlName="personality_id"
               class="text-center bg-gray-50 border border-pink-900 text-lg rounded-2xl focus:outline-none focus:ring focus:ring-pink-100 p-[6px] w-full">
               <option selected>Seleccione</option>
-              <option value="1">Amigable</option>
-              <option value="2">Tímido</option>
-              <option value="3">Juguetón</option>
+              @for (item of Personality; track $index) {
+                <option value="{{item.idPersonality}}">{{item.personality}}</option>
+              }
             </select>
             @if(catRegisterForm.get('personality_id')?.hasError('required') &&
             catRegisterForm.get('personality_id')?.touched){
@@ -149,9 +150,9 @@
             <select id="catHealth_id" formControlName="catHealth_id"
               class="text-center bg-gray-50 border border-pink-900 text-lg rounded-2xl focus:outline-none focus:ring focus:ring-pink-100 p-[6px] w-full">
               <option selected>Seleccione</option>
-              <option value="1">Sano</option>
-              <option value="2">En tratamiento</option>
-              <option value="3">Recuperado</option>
+              @for (item of CatHealth; track $index) {
+                <option value="{{item.idCatHealth}}">{{item.catHealth}}</option>
+              }
             </select>
             @if(catRegisterForm.get('catHealth_id')?.hasError('required') &&
             catRegisterForm.get('catHealth_id')?.touched){
@@ -203,9 +204,9 @@
               <select id="specialCondition_id" formControlName="specialCondition_id"
                 class="text-center bg-gray-50 border border-pink-900 text-lg rounded-2xl focus:outline-none focus:ring focus:ring-pink-100 p-[6px] flex-1 max-sm:flex-none">
                 <option selected>Seleccione</option>
-                <option value="1">Condición A</option>
-                <option value="2">Condición B</option>
-                <option value="3">Condición C</option>
+                @for (item of SpecialCondition; track $index) {
+                  <option value="{{item.idSpecialCondition}}">{{item.specialCondition}}</option>
+                }
               </select>
             </div>
             }

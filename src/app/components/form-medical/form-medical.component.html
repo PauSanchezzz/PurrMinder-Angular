@@ -1,0 +1,93 @@
+<form [formGroup]="medicalRegisterForm" (ngSubmit)="onSubmit()" class="flex flex-col justify-center items-center">
+  <section class="grid grid-cols-2 mx-20 max-sm:grid-cols-1 max-sm:mx-0 ">
+    <section class="grid mr-16 max-sm:mx-5">
+      <section class="flex items-center space-x-2">
+        <p class="titleFormCatRegister max-sm:text-start">Felino:</p>
+        <div class="flex-1">
+          <select id="cat_id" formControlName="cat_id"
+            class="text-center bg-gray-50 border border-pink-900 text-lg rounded-2xl focus:outline-none focus:ring focus:ring-pink-100 p-[6px] w-full">
+            <option selected>Seleccione</option>
+            <option value="1">opc 1</option>
+          </select>
+          @if(medicalRegisterForm.get('cat_id')?.hasError('required') &&
+          medicalRegisterForm.get('cat_id')?.touched){
+          <div class="form-error text-red-600 font-medium flex text-center  justify-center">Oops! Felino requerido.
+          </div>
+          }
+        </div>
+      </section>
+      <section class="flex items-center space-x-2">
+        <p class="titleFormCatRegister max-sm:text-start">Fecha Procedimiento:</p>
+        <div class="flex-1">
+          <input type="date" id="dateMedicalProcedure" formControlName="dateMedicalProcedure" class=" inputStyle"
+            required />
+          @if(medicalRegisterForm.get('dateMedicalProcedure')?.hasError('required') &&
+          medicalRegisterForm.get('dateMedicalProcedure')?.touched){
+          <div class="form-error text-red-600 font-medium flex text-center  justify-center">Oops! Fecha requerida.
+          </div>
+          }
+        </div>
+      </section>
+      <section class="flex items-center space-x-2">
+        <p class="titleFormCatRegister max-sm:text-start">Tipo de Procedimiento</p>
+        <div class="flex-1">
+          <select id="typeMedicalProcedure_id" formControlName="typeMedicalProcedure_id"
+            class="text-center bg-gray-50 border border-pink-900 text-lg rounded-2xl focus:outline-none focus:ring focus:ring-pink-100 p-[6px] w-full">
+            <option selected>Seleccione</option>
+            <option value="1">opc 1</option>
+          </select>
+          @if(medicalRegisterForm.get('typeMedicalProcedure_id')?.hasError('required') &&
+          medicalRegisterForm.get('typeMedicalProcedure_id')?.touched){
+          <div class="form-error text-red-600 font-medium flex text-center  justify-center">Oops! Procedimiento
+            requerida.
+          </div>
+          }
+        </div>
+      </section>
+    </section>
+    <section class="grid gap-5 mr-16 max-sm:mx-5">
+      <section class="flex items-center space-x-2 ">
+        <p class="titleFormCatRegister max-sm:text-start">Costo del Procedimiento:</p>
+        <div class="flex-1">
+          <input
+            class="bg-gray-50 border border-pink-900 text-lg rounded-2xl p-[6px] focus:outline-none focus:ring focus:ring-pink-100 text-center w-full"
+            type="text" id="CostMedicalProcedure" formControlName="CostMedicalProcedure" placeholder="123.456"
+            required />
+          @if(medicalRegisterForm.get('CostMedicalProcedure')?.hasError('required') &&
+          medicalRegisterForm.get('CostMedicalProcedure')?.touched){
+          <div class="form-error text-red-600 font-medium flex text-center  justify-center">Oops! Costo
+            requerida.
+          </div>
+          }
+        </div>
+      </section>
+      <section class="flex items-center space-x-2">
+        <p class="titleFormCatRegister max-sm:text-start">Descripción:</p>
+        <div class="flex-1">
+          <textarea
+            class="caret-pink-800 bg-gray-50 border border-pink-900 text-lg rounded-2xl focus:outline-none focus:ring focus:ring-pink-100 p-[6px] w-full"
+            name="descriptionCat" id="commentsMedicalProcedure" formControlName="commentsMedicalProcedure"></textarea>
+          @if(medicalRegisterForm.get('commentsMedicalProcedure')?.hasError('required') &&
+          medicalRegisterForm.get('commentsMedicalProcedure')?.touched){
+          <div class="form-error text-red-600 font-medium flex text-center  justify-center">Oops! Comentarios
+            requerida.
+          </div>
+          }
+        </div>
+      </section>
+      <section class="flex items-center space-x-2">
+        <p class="titleFormCatRegister max-sm:text-start">Soporte Procedimiento:</p>
+        <div class="flex-1">
+          <label htmlFor="supportMedicalProcedure">
+            <input type="file" (change)="onImagePicked($event)" id="supportMedicalProcedure"
+              class="text-sm font-semibold text-slate-500 file:mr-4 file:py-2 file:px-4 file:border file:border-pink-900 file:rounded-full file:text-sm file:font-semibold file:bg-pink-50 file:text-pink-900 hover:file:bg-pink-100 w-full" />
+          </label>
+        </div>
+      </section>
+    </section>
+  </section>
+  <button type="submit"
+    class="mt-16 max-sm:my-5 bg-lightPinkSecond border-2 border-lightPink py-2 px-8 rounded-lg font-bold text-darkPinkText hover:bg-lightPink hover:border-darkPinkText hover:text-white transition ease-in-out delay-150 hover:-translate-y-1">
+    Guardar
+  </button>
+</form>

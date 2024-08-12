@@ -47,13 +47,14 @@
         <p class="titleStyle">Tipo de Documento:</p>
 
         <select id="documentType_id" formControlName="documentType_id" class="selectStyle">
-          <option selected>Choose a country</option>
-          <option value="1">PruebaTipoDocumento</option>
-          <option value="CA">Canada</option>
-          <option value="FR">France</option>
-          <option value="DE">Germany</option>
+          <option selected>Seleccione</option>
+          @for (item of DocumentType; track $index) {
+          <option value="item.idDocumentType">{{item.documentType}}</option>
+          }
+
         </select>
-        @if(userSiginForm.get('documentType_id')?.hasError('required') && userSiginForm.get('documentType_id')?.touched){
+        @if(userSiginForm.get('documentType_id')?.hasError('required') &&
+        userSiginForm.get('documentType_id')?.touched){
         <div class="form-error text-red-600 font-medium pl-2">Oops! Selecciona un tipo de documento.</div>
         }
       </section>
@@ -79,11 +80,11 @@
         <p class="titleStyle">Ciudad de Residencia:</p>
 
         <select id="city_id" formControlName="city_id" class="selectStyle">
-          <option selected>Choose a country</option>
-          <option value="1">PruebaCiudad</option>
-          <option value="CA">Canada</option>
-          <option value="FR">France</option>
-          <option value="DE">Germany</option>
+          <option selected>Seleccione</option>
+          @for (item of City; track $index) {
+          <option value="item.idCity">{{item.city}}</option>
+          }
+
         </select>
         @if(userSiginForm.get('city_id')?.hasError('required') && userSiginForm.get('city_id')?.touched){
         <div class="form-error text-red-600 font-medium pl-2">Oops! Ciudad requerida.</div>
@@ -92,9 +93,10 @@
 
       <section class="h-10 mt-11">
         <p class="titleStyle">Telefono:</p>
-        <input type="number" id="telephoneNumber" formControlName="telephoneNumber" class="inputStyle" placeholder="3214567890"
-          required />
-        @if(userSiginForm.get('telephoneNumber')?.hasError('required') && userSiginForm.get('telephoneNumber')?.touched){
+        <input type="number" id="telephoneNumber" formControlName="telephoneNumber" class="inputStyle"
+          placeholder="3214567890" required />
+        @if(userSiginForm.get('telephoneNumber')?.hasError('required') &&
+        userSiginForm.get('telephoneNumber')?.touched){
         <div class="form-error text-red-600 font-medium pl-2">Oops! Telefono requerido.</div>
         }
       </section>
@@ -113,11 +115,11 @@
         <p class="titleStyle">Ocupación:</p>
 
         <select id="occupation" formControlName="occupation" class="selectStyle">
-          <option selected>Choose a country</option>
-          <option value="1">PruebaOcupacion</option>
-          <option value="CA">Canada</option>
-          <option value="FR">France</option>
-          <option value="DE">Germany</option>
+          <option selected>Seleccione</option>
+          @for (item of Occupation; track $index) {
+          <option value="item.idOccupation">{{item.occupation}}</option>
+          }
+
         </select>
         @if(userSiginForm.get('occupation')?.hasError('required') && userSiginForm.get('occupation')?.touched){
         <div class="form-error text-red-600 font-medium pl-2">Oops! Ocupación requerida.</div>

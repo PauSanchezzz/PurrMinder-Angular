@@ -1,0 +1,11 @@
+:host {
+  height: 1600px;
+}
+
+.slide-custom {
+  @apply flex justify-center items-center;
+}
+
+* {
+  --swiper-pagination-color: #660c44;
+}

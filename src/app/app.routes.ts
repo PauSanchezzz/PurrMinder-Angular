@@ -8,6 +8,9 @@ import { HomeComponent } from './pages/home/home.component';
 import AppRecomendationsComponent from './pages/recomendations/app.recomendations.component';
 import { AdoptionsComponent } from './pages/adoptions/adoptions.component';
 import { CatRegisterComponent } from './pages/cat-register/cat-register.component';
+import { RegisterModuleComponent } from './pages/register-module/register-module.component';
+import { Component } from '@angular/core';
+import { ShelterMenuComponent } from './pages/shelter-menu/shelter-menu.component';
 
 export const routes: Routes = [
   {
@@ -39,11 +42,19 @@ export const routes: Routes = [
     component: AdoptionsComponent,
   },
   {
-path: 'adoptees',
-component: AdopteesComponent,
+    path: 'adoptees',
+    component: AdopteesComponent,
   },
   {
     path: 'catRegister',
     component: CatRegisterComponent,
-  }
+  },
+  {
+    path: 'registerModule',
+    component: RegisterModuleComponent,
+  },
+  {
+    path: 'shelterMenu',
+    component: ShelterMenuComponent,
+  },
 ];

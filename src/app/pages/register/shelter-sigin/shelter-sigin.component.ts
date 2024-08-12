@@ -20,6 +20,11 @@ import { formatDate } from '@angular/common';
 
 import 'sweetalert2/src/sweetalert2.scss';
 import Swal from 'sweetalert2';
+import {
+  GetDocumentTypeResponse,
+  DocumentType,
+} from '../../../interfaces/selectForm.interface';
+import { SelectFormService } from '../../../services/select-form.service';
 
 @Component({
   selector: 'app-shelter-sigin',
@@ -31,10 +36,13 @@ export default class ShelterSiginComponent implements OnChanges, OnInit {
   @Input() data: User | null = null;
   shelterSiginForm!: FormGroup;
 
+  DocumentType: DocumentType[] = [];
+
   constructor(
     private fb: FormBuilder,
     private AuthService: AuthService,
-    private router: Router
+    private SelectFormService: SelectFormService,
+    private router: Router,
   ) {
     this.shelterSiginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
@@ -52,7 +60,11 @@ export default class ShelterSiginComponent implements OnChanges, OnInit {
   }
 
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    this.SelectFormService.getDocumentType().subscribe(
+      (response: GetDocumentTypeResponse) => {
+        this.DocumentType = response.data;
+      },
+    );
   }
   ngOnChanges(changes: SimpleChanges): void {
     if (this.data) {

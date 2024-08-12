@@ -50,11 +50,11 @@
         <p class="titleStyle">Tipo de Documento:</p>
 
         <select id="documentType_id" formControlName="documentType_id" class="selectStyle">
-          <option selected>Choose a country</option>
-          <option value="1">prueba</option>
-          <option value="CA">Canada</option>
-          <option value="FR">France</option>
-          <option value="DE">Germany</option>
+          <option selected>Seleccione</option>
+          @for (item of DocumentType; track $index) {
+          <option value="item.idDocumentType">{{item.documentType}}</option>
+          }
+
         </select>
         @if (shelterSiginForm.get('documentType_id')?.hasError('required') &&
         shelterSiginForm.get('documentType_id')?.touched) {
