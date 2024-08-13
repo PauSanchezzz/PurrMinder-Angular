@@ -60,10 +60,17 @@ export class FormDeathComponent implements OnChanges {
             },
             error: (error: any) => {
               Swal.fire('Error', 'Death registration failed', 'error');
-             },
+            },
           },
         );
       }
+    } else {
+      this.deathRegisterForm.markAllAsTouched();
+      Swal.fire({
+        title: 'Registro Fallido',
+        text: 'Debe completar todos los campos.',
+        icon: 'error',
+      });
     }
   }
 }
