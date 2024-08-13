@@ -1,0 +1,11 @@
+<app-header />
+<div class="relative pt-40">
+  <div class="flex items-center justify-center pb-20">
+    <h2 class="font-extrabold text-3xl tracking-wide text-center max-md:text-4xl max-md:mr-2 text-darkPinkText">
+      Seleccione la opción que desee realizar</h2>
+  </div>
+  <div class="grid grid-cols-2 justify-items-center mx-80">
+    @for (item of optionsMenu; track $index) {
+    <app-card-menu-shelter [urlCard]="item.urlCard" [imgCard]="item.imgCard" [titleCard]="item.titleCard" />
+    }
+  </div>

@@ -57,12 +57,12 @@ export class FormMedicalComponent {
         this.medicalRegisterForm.reset();
       },
       error: (error: any) => {
+        this.medicalRegisterForm.markAllAsTouched();
         Swal.fire({
           title: '¡Campos Vacios!',
           text: 'Debe completar todos los campos.',
           icon: 'error',
         });
-        this.medicalRegisterForm.reset();
       },
     });
   }

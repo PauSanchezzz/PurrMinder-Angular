@@ -1,0 +1,24 @@
+<app-header />
+<div class="flex flex-col items-center justify-center mt-24">
+  <h2 class="font-extrabold text-3xl tracking-wide text-center max-md:text-4xl max-md:mr-2 text-darkPinkText">
+    Gatos en Adopción</h2>
+</div>
+
+<section class="p-5 flex flex-col items-center justify-center">
+  <p class="font-extrabold text-lg tracking-wide text-start max-md:text-4xl max-md:mr-2 text-lightPink pb-3">
+    Elige visualización:</p>
+  <select id="typeView" [(ngModel)]="typeView"
+    class="text-center bg-gray-50 border border-pink-900 text-lg rounded-2xl focus:outline-none focus:ring focus:ring-pink-100 p-[6px] w-52 max-sm:w-5 mb-16">
+    <option selected>Todos</option>
+    <option value="1">Disponibles</option>
+    <option value="2">No Disponibles</option>
+  </select>
+</section>
+
+@if (typeView === '1') {
+<app-cats-available />
+} @else if (typeView === '2') {
+<app-cats-not-available />
+}@else{
+<app-all-cats />
+}

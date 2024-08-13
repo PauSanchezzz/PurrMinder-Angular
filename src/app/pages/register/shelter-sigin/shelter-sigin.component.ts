@@ -16,7 +16,7 @@ import { FooterComponent } from '../../../components/footer/footer.component';
 import { User } from '../../../interfaces/user.interface';
 import { AuthService } from '../../../services/auth.service';
 import { Route, Router } from '@angular/router';
-import { formatDate } from '@angular/common';
+import { CommonModule, formatDate } from '@angular/common';
 
 import 'sweetalert2/src/sweetalert2.scss';
 import Swal from 'sweetalert2';
@@ -29,7 +29,7 @@ import { SelectFormService } from '../../../services/select-form.service';
 @Component({
   selector: 'app-shelter-sigin',
   standalone: true,
-  imports: [HeaderComponent, FooterComponent, ReactiveFormsModule],
+  imports: [HeaderComponent, FooterComponent, ReactiveFormsModule, CommonModule],
   templateUrl: './shelter-sigin.component.html',
 })
 export default class ShelterSiginComponent implements OnChanges, OnInit {
@@ -107,6 +107,13 @@ export default class ShelterSiginComponent implements OnChanges, OnInit {
           },
         });
       }
+    } else {
+      this.shelterSiginForm.markAllAsTouched();
+      Swal.fire({
+        title: 'Registro Fallido',
+        text: 'Debe completar todos los campos.',
+        icon: 'error',
+      });
     }
   }
 }

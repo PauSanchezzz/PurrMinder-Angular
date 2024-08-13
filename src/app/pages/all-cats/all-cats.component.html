@@ -1,0 +1,77 @@
+<div class="relative overflow-x-auto shadow-md sm:rounded-lg mx-16">
+  <table class="w-full text-sm text-left rtl:text-right text-gray-500 ">
+    <thead class="text-xs text-darkPinkText uppercase bg-[#F4BBD8] ">
+      <tr>
+        <th scope="col" class="p-4">
+          <div class="flex items-center">
+          </div>
+        </th>
+        <th scope="col" class="px-6 py-3 text-center">
+          Nombre
+        </th>
+        <th scope="col" class="px-6 py-3 text-center">
+          Foto
+        </th>
+        <th scope="col" class="px-6 py-3 text-center">
+          Edad
+        </th>
+        <th scope="col" class="px-6 py-3 text-center">
+          Descripción
+        </th>
+        <th scope="col" class="px-6 py-3 text-center">
+          Genero
+        </th>
+        <th scope="col" class="px-6 py-3 text-center">
+          Peso
+        </th>
+        <th scope="col" class="px-6 py-3 text-center">
+          Actualizar
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (item of catsAvailable; track $index) {
+      <tr class="bg-white border-b hover:bg-gray-50 ">
+        <td class="w-4 p-4">
+          <div class="flex items-center">
+          </div>
+        </td>
+
+
+        <th scope="row" class="px-6 py-2 font-medium text-gray-900 whitespace-nowrap text-center">
+          {{item.nameCat}}
+        </th>
+        <td class="px-6 py-2 flex justify-center">
+          <img class="rounded-lg size-20 object-cover" [src]="'http://127.0.0.1:8000/storage/'+item.imageCat" alt="" />
+        </td>
+        <td class="px-6 py-2 text-center">
+          {{item.ageCat}}
+          @if(item.calendar_id === 1){
+          Día(s)
+          }@else if (item.calendar_id ===2) {
+          Mes(es)
+          }@else{
+          Año(s)
+          }
+        </td>
+        <td class="text-center">
+          <button type="button"
+            class="text-white bg-purple-700 hover:bg-purple-800 focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2"
+            (click)="descriptionCat(item.nameCat, item.descriptionCat)">
+            Ver descripción
+          </button>
+        </td>
+        <td class="px-6 py-2 text-center">
+          {{item.sexCat_id === 1 ? 'Macho' : 'Hembra'}}
+        </td>
+        <td class="px-6 py-2 text-center">
+          {{item.weightCat}} KG
+        </td>
+        <td class="px-6 pt-6 flex items-center justify-center">
+          <a href=""><img class="size-12" src="svg/update.svg" alt=""></a>
+        </td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</div>

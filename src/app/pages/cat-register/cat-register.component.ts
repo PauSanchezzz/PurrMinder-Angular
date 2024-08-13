@@ -118,6 +118,7 @@ export class CatRegisterComponent implements OnInit {
         });
       },
       error: (error: any) => {
+        this.catRegisterForm.markAllAsTouched();
         Swal.fire({
           title: '¡Campos Vacios!',
           text: 'Debe completar todos los campos.',

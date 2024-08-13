@@ -2,18 +2,11 @@ import { Component } from '@angular/core';
 import { HeaderComponent } from '../../components/header/header.component';
 import { RecomendationCardComponent } from '../../components/recomendation-card/recomendation-card.component';
 import { FooterComponent } from '../../components/footer/footer.component';
-import { ModalComponent } from '../../components/modal/modal.component';
-
 
 @Component({
   selector: 'app-app.recomendations',
   standalone: true,
-  imports: [
-    HeaderComponent,
-    RecomendationCardComponent,
-    FooterComponent,
-    ModalComponent,
-  ],
+  imports: [HeaderComponent, RecomendationCardComponent, FooterComponent],
   templateUrl: './app.recomendations.component.html',
 })
 export default class AppRecomendationsComponent {

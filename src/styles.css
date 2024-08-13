@@ -29,7 +29,7 @@ html {
   .titleStyle {
     @apply text-lg font-bold text-darkPinkText pb-2;
   }
-  .titleFormCatRegister{
+  .titleFormCatRegister {
     @apply text-lg font-bold text-darkPinkText w-36 text-center;
   }
 }

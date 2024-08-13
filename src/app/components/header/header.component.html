@@ -2,11 +2,70 @@
 
   <div class="flex justify-between md:gap-60 max-md:gap-8 -order-2 max-md:order-1 ">
 
-    <div class="grid  gap-3  max-md:px-0">
+    @if (showLoginButton()) {
+    <div class="grid  gap-3  max-md:px-0 py-5">
       <a href="/login"><button type="button"
-        class=" text-darkPinkText bg-[#F4BBD8] hover:bg-lightPinkSecond hover:text-background text-base font-medium rounded-lg px-4 py-2 text-center border border-[#F4BBD8]">Iniciar
-        Sesión / Registrarse</button></a>
+          class=" text-darkPinkText bg-[#F4BBD8] hover:bg-lightPinkSecond hover:text-background text-base font-medium rounded-lg px-4 py-2 text-center border border-[#F4BBD8]">Iniciar
+          Sesión / Registrarse</button></a>
     </div>
+    }@else if (role === 1) {
+    <button class="py-4 flex items-center justify-center hover:drop-shadow-lightPinkText" (click)="toggleMenu()">
+      <p class="font-medium md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 text-[17px] text-darkPinkText pr-5">
+        ¡Bienvenido {{ userName }}!
+      </p>
+      <img class="size-12" src="1.png">
+    </button>
+    <div class="sub-menu-wrap" [class.open-menu]="subMenu" id="subMenu">
+      <div class="sub-menu border-[0.2px] border-pink-950">
+        <div class="user-info">
+          <img src="1.png" alt="">
+          <h3
+            class="font-medium md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 text-[17px] text-darkPinkText pl-5">
+            {{ userName }} {{userLastName}}</h3>
+        </div>
+        <hr>
+        <a href="/shelterMenu" class="sub-menu-link">
+          <img class="size-12" src="menu.png" alt="">
+          <p>Menú</p>
+          <span>></span>
+        </a>
+        <a (click)="logOut()" class="sub-menu-link">
+          <img class="size-12" src="logout.png" alt="">
+          <p>Cerrar Sesión</p>
+          <span>></span>
+        </a>
+      </div>
+    </div>
+    }
+    @else if(role === 2) {
+    <button class="py-4 flex items-center justify-center hover:drop-shadow-lightPinkText" (click)="toggleMenu()">
+      <p class="font-medium md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 text-[17px] text-darkPinkText pr-5">
+        ¡Bienvenido {{ userName }}!
+      </p>
+      <img class="size-12" src="2.png">
+    </button>
+    <div class="sub-menu-wrap" [class.open-menu]="subMenu" id="subMenu">
+      <div class="sub-menu border-[0.2px] border-pink-950">
+        <div class="user-info">
+          <img src="2.png" alt="">
+          <h3
+            class="font-medium md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 text-[17px] text-darkPinkText pl-5">
+            {{ userName }} {{userLastName}}</h3>
+        </div>
+        <hr>
+        <a href="/userMenu" class="sub-menu-link">
+          <img class="size-12" src="menu.png" alt="">
+          <p>Menú</p>
+          <span>></span>
+        </a>
+        <a (click)="logOut()" class="sub-menu-link">
+          <img class="size-12" src="logout.png" alt="">
+          <p>Cerrar Sesión</p>
+          <span>></span>
+        </a>
+      </div>
+    </div>
+    }
 
     <div class="flex items-center -order-1 max-md:order-1">
 

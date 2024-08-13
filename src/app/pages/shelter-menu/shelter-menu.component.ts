@@ -56,27 +56,27 @@ export class ShelterMenuComponent implements OnInit {
 
   optionsMenu = [
     {
-      urlCard: '',
+      urlCard: '/registerModule',
       imgCard: 'svg/registers.svg',
       titleCard: 'Registros',
     },
     {
-      urlCard: '',
+      urlCard: '/catRegister',
       imgCard: 'svg/registerCat.svg',
       titleCard: 'Ingreso del Felino',
     },
     {
-      urlCard: '',
+      urlCard: '/availableAdoption',
       imgCard: 'svg/availability.svg',
       titleCard: 'Disponibilidad para Adopción',
     },
     {
-      urlCard: '',
+      urlCard: '/unresolvedAdoptions',
       imgCard: 'svg/requests.svg',
       titleCard: 'Ver solicitudes pendientes',
     },
     {
-      urlCard: '',
+      urlCard: '/profileShelter',
       imgCard: 'svg/profile.svg',
       titleCard: 'Actualizar Perfil',
     },

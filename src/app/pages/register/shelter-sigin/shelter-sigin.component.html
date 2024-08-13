@@ -11,7 +11,7 @@
         <p class="titleStyle">Correo:</p>
         <input type="email" id="email" formControlName="email" class="inputStyle" placeholder="ejemplo@correo.com"
           required />
-        @if(shelterSiginForm.get('email')?.hasError('required') && shelterSiginForm.get('email')?.touched){
+        @if(shelterSiginForm.get('email')?.hasError('required') && shelterSiginForm.get('email')?.touched ){
         <div class="form-error text-red-600 font-medium pl-2 ">Oops! Correo requerido.</div>
         }
       </section>
@@ -30,7 +30,7 @@
         <input type="text" id="lastName" formControlName="lastName" class="inputStyle" placeholder="Apellido"
           required />
         @if(shelterSiginForm.get('lastName')?.hasError('required') &&
-        shelterSiginForm.get('lastName')?.touched){
+        shelterSiginForm.get('lastName')?.touched ){
         <div class="form-error text-red-600 font-medium pl-2 ">Oops! Apellido requerido.</div>
         }
       </section>
@@ -39,7 +39,7 @@
         <p class="titleStyle">Contraseña:</p>
         <input type="password" id="password" formControlName="password" class="inputStyle" placeholder="•••••••••"
           required />
-        @if (shelterSiginForm.get('password')?.hasError('required') && shelterSiginForm.get('password')?.touched) {
+        @if (shelterSiginForm.get('password')?.hasError('required') && shelterSiginForm.get('password')?.touched ) {
         <div class="form-error text-red-600 font-medium pl-2">Oops! Contraseña requerida.</div>
         }@else if(shelterSiginForm.get('password')?.hasError('minlength') && shelterSiginForm.get('password')?.touched){
         <div class="form-error text-red-600 font-medium pl-2">Oops! Minimo ingresa 6 caracteres.</div>
@@ -52,12 +52,12 @@
         <select id="documentType_id" formControlName="documentType_id" class="selectStyle">
           <option selected>Seleccione</option>
           @for (item of DocumentType; track $index) {
-          <option value="item.idDocumentType">{{item.documentType}}</option>
+          <option value="{{item.idDocumentType}}">{{item.documentType}}</option>
           }
 
         </select>
         @if (shelterSiginForm.get('documentType_id')?.hasError('required') &&
-        shelterSiginForm.get('documentType_id')?.touched) {
+        shelterSiginForm.get('documentType_id')?.touched ) {
         <div class="form-error text-red-600 font-medium pl-2">Oops! Selecciona un tipo de documento.</div>
         }
       </section>
@@ -67,7 +67,7 @@
         <input type="number" id="documentNumber" formControlName="documentNumber" class="inputStyle"
           placeholder="1000245321" required />
         @if (shelterSiginForm.get('documentNumber')?.hasError('required') &&
-        shelterSiginForm.get('documentNumber')?.touched) {
+        shelterSiginForm.get('documentNumber')?.touched ) {
         <div class="form-error text-red-600 font-medium pl-2">Oops! Número de documento requerido.</div>
         }
       </section>
@@ -76,7 +76,7 @@
         <p class="titleStyle">Fecha Nacimiento Responsable:</p>
         <input type="date" id="birthDate" formControlName="birthDate" class=" inputStyle" required />
         @if (shelterSiginForm.get('birthDate')?.hasError('required') &&
-        shelterSiginForm.get('birthDate')?.touched) {
+        shelterSiginForm.get('birthDate')?.touched ) {
         <div class="form-error text-red-600 font-medium pl-2">Oops! Fecha de nacimiento requerida.</div>
         }
       </section>
@@ -86,7 +86,7 @@
         <input type="text" id="nameShelter" formControlName="nameShelter" class="inputStyle"
           placeholder="Nombre Hogar de Paso" required />
         @if (shelterSiginForm.get('nameShelter')?.hasError('required') &&
-        shelterSiginForm.get('nameShelter')?.touched) {
+        shelterSiginForm.get('nameShelter')?.touched ) {
         <div class="form-error text-red-600 font-medium pl-2">Oops! Nombre del Hogar de Paso requerido.</div>
         }
       </section>
@@ -96,7 +96,7 @@
         <input type="number" id="telephoneNumber" formControlName="telephoneNumber" class="inputStyle"
           placeholder="3214567890" required />
         @if (shelterSiginForm.get('telephoneNumber')?.hasError('required') &&
-        shelterSiginForm.get('telephoneNumber')?.touched) {
+        shelterSiginForm.get('telephoneNumber')?.touched ) {
         <div class="form-error text-red-600 font-medium pl-2">Oops! Telefono requerido.</div>
         }
       </section>
@@ -106,7 +106,7 @@
         <input type="text" id="address" formControlName="address" class="inputStyle"
           placeholder="Calle 20 Norte # 20-40" required />
         @if (shelterSiginForm.get('telephoneNumber')?.hasError('required') &&
-        shelterSiginForm.get('telephoneNumber')?.touched) {
+        shelterSiginForm.get('telephoneNumber')?.touched ) {
         <div class="form-error text-red-600 font-medium pl-2">Oops! Dirección requerida.</div>
         }
       </section>
