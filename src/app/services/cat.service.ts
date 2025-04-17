@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { Cat, GetCatsResponse } from '../interfaces/cat.interface';
 import { Observable } from 'rxjs';
 
-@Injectable({ 
+@Injectable({
   providedIn: 'root',
 })
 export class CatService {

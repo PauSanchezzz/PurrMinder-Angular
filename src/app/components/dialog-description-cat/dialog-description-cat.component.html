@@ -1,0 +1,35 @@
+<div class="card flex justify-content-center">
+  <p-dialog class="dialog-cat border border-pink-200 rounded-lg" header="Detalles del Gato" [(visible)]="visible"
+    [modal]="true" [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }" [style]="{ width: '50vw' }" [draggable]="false"
+    [resizable]="false" (onHide)="hideDialog()">
+
+    <div class="flex gap-5np justify-center items-center">
+      @if(catData){
+      <div class="flex flex-col gap-3 items-center">
+        <img [src]="'http://127.0.0.1:8000/storage/'+catData.imageCat" alt="{{ catData.nameCat }}"
+          class="w-[90rem] object-cover rounded-lg" />
+        <div class="flex gap-3 ">
+          <p>{{ catData.ageCat }} años</p>
+          <p>{{ catData.weightCat }} Kg</p>
+          <p>Macho</p>
+        </div>
+      </div>
+      <div class="flex flex-col gap-3">
+        <h2 class="text-center">{{ catData.nameCat }}ss</h2>
+        <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem magnam quia
+          commodi, praesentium,
+          quidem voluptatem a fuga quos quis at veritatis distinctio expedita error voluptate obcaecati quam tempora
+          similique laudantium.</p>
+        <p>Amoroso</p>
+        <div class="flex justify-between items-center">
+          <div>
+            <p>Bogota</p>
+            <p>Huellitas felices</p>
+          </div>
+          <p>boton</p>
+        </div>
+      </div>
+      }
+    </div>
+  </p-dialog>
+</div>

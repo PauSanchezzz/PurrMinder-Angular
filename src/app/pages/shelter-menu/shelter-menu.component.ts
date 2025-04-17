@@ -81,7 +81,7 @@ export class ShelterMenuComponent implements OnInit {
       titleCard: 'Actualizar Perfil',
     },
     {
-      urlCard: '',
+      urlCard: '/resolvedAdoptions',
       imgCard: 'svg/availableApplications.svg',
       titleCard: 'Ver solicitudes resueltas',
     },

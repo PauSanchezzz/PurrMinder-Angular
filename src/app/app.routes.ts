@@ -62,7 +62,7 @@ export const routes: Routes = [
   {
     path: 'shelterMenu',
     component: ShelterMenuComponent,
-    canActivate: [authGuard],
+    //canActivate: [authGuard],
   },
   {
     path: 'userMenu',

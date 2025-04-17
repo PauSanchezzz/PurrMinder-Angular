@@ -28,3 +28,13 @@ export interface UserByApplication {
   telephoneNumber: number;
   occupation: string;
 }
+
+export interface CreateResponseAdoption {
+  comments: string;
+  evaluationStatus_id: number;
+}
+
+export interface FilterDetailAdoptions {
+  fecha_inicio: string;
+  fecha_fin: string;
+}

@@ -1,3 +1,7 @@
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+@import "primeicons/primeicons.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -17,6 +21,22 @@ section[id] {
 
 html {
   scroll-behavior: smooth;
+}
+
+.p-calendar.p-input-icon-right {
+  input#icondisplay {
+    border: 1px solid #660c44;
+    padding: 0.4rem 1rem;
+  }
+}
+
+.dialog-cat {
+  .p-dialog-header {
+    @apply bg-pink-50;
+  }
+  .p-dialog-content {
+    @apply bg-pink-50;
+  }
 }
 
 @layer components {

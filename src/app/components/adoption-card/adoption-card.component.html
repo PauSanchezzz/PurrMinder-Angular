@@ -1,17 +1,11 @@
-<div class="w-[17rem] h-[17rem] bg-pink-50 border border-pink-200 rounded-lg shadow ">
-  <a href="#">
-    <img class="rounded-t-lg h-[190px] w-[17rem] object-cover" [src]="'http://127.0.0.1:8000/storage/'+imageCat" alt="" />
-  </a>
+<div class="w-[17rem] h-[17rem] bg-pink-50 border border-pink-200 rounded-lg shadow cursor-pointer"
+  (click)="onClickCard()">
+  <img class="rounded-t-lg h-[190px] w-[17rem] object-cover" [src]="'http://127.0.0.1:8000/storage/'+imageCat" alt="" />
   <div class="p-2 text-center">
-    <a href="#" class="flex items-center justify-center">
+    <div class="flex items-center justify-center">
       <h5 class="text-2xl font-bold tracking-tight text-gray-900 pr-5">{{nameCat}}</h5>
-      @if(sexCat_id == 1){
-      <img class="size-5" src="/svg/male.svg" alt="">
-      }
-      @else{
-      <img class="size-5" src="/svg/female.svg" alt="">
-      }
-    </a>
+      <img class="size-5" [src]="sexCat_id === 1 ? '/svg/male.svg' : '/svg/female.svg'" alt="" />
+    </div>
     <p class="font-normal text-gray-700 pt-1">Edad: <b>{{ageCat}} años</b> | Peso: <b>{{weightCat}} Kg</b></p>
   </div>
 </div>

@@ -1,1 +1,88 @@
-<p>resolved-applications works!</p>
+<app-header></app-header>
+<div class="flex flex-col items-center justify-center mt-32">
+  <h2 class="font-extrabold text-3xl tracking-wide text-center max-md:text-4xl max-md:mr-2 text-darkPinkText">
+    Solicitudes de Adopción Resueltas
+  </h2>
+</div>
+
+
+<div class="mx-28 pt-8 flex justify-between items-center ">
+  <form class="flex gap-5 justify-center items-end" [formGroup]="filters" (ngSubmit)="onSubmit()">
+    <div class="flex-auto">
+      <label class="font-bold block mb-2 text-darkPinkText"> Fecha de respuesta inicial</label>
+      <p-calendar placeholder="Fecha inicio" dateFormat="dd/mm/yy" formControlName="fecha_inicio"
+        [iconDisplay]="'input'" [showIcon]="true" inputId="icondisplay" />
+    </div>
+    <div class="flex-auto">
+      <label class="font-bold block mb-2 text-darkPinkText"> Fecha de respuesta final</label>
+      <p-calendar placeholder="Fecha fin" dateFormat="dd/mm/yy" formControlName="fecha_fin" [iconDisplay]="'input'"
+        [showIcon]="true" inputId="icondisplay" />
+    </div>
+    <div class="flex gap-4">
+      <button
+        class=" bg-lightPinkSecond border-2 border-lightPink py-2 px-4 rounded-lg font-bold text-darkPinkText hover:bg-lightPink hover:border-darkPinkText hover:text-pink-100"
+        type="submit">
+        <i class="pi pi-search" style="font-size: 1.5rem"></i>
+      </button>
+      <div
+        class="cursor-pointer bg-lightPinkSecond border-2 border-lightPink py-2 px-4 rounded-lg font-bold text-darkPinkText hover:bg-lightPink hover:border-darkPinkText hover:text-pink-100"
+        (click)="cleanFilters()">
+        <i class="pi pi-eraser" style="font-size: 1.5rem"></i>
+      </div>
+    </div>
+  </form>
+  <div class="flex gap-7">
+    <button (click)="exportToPDF()" class="flex justify-center items-center flex-col" href="#">
+      <img class="size-12" src="/svg/pdf.svg" alt="">
+      <p class="font-bold text-darkPinkText">Reporte PDF</p>
+    </button>
+    <button (click)="exportToExcel()" class="flex justify-center items-center flex-col" href="#">
+      <img class="size-12" src="/svg/excel.svg" alt="">
+      <p class="font-bold text-darkPinkText">Reporte Excel</p>
+    </button>
+  </div>
+</div>
+<div class="relative overflow-x-auto shadow-md sm:rounded-lg mx-16 pt-14">
+  <table class="w-full text-sm text-left rtl:text-right text-gray-500 ">
+    <thead class="text-xs text-darkPinkText uppercase bg-[#F4BBD8]">
+      <tr>
+        <th scope="col" class="px-6 py-3 text-center">Nombre Felino</th>
+        <th scope="col" class="px-6 py-3 text-center">Fecha envio Formulario</th>
+        <th scope="col" class="px-6 py-3 text-center">Fecha de Respuesta</th>
+        <th scope="col" class="px-6 py-3 text-center">Comentarios</th>
+        <th scope="col" class="px-6 py-3 text-center">Estado</th>
+      </tr>
+    </thead>
+    <tbody>
+      @if (noResults) {
+      <tr class="bg-white border-b hover:bg-gray-50">
+        <td class="px-6 py-4 text-center " colspan="5">
+          <div class="flex flex-col justify-center items-center gap-3 font-bold text-pink-950">
+            <img class="size-40" src="/empty-table.png" alt="">
+            No hay resultados
+          </div>
+        </td>
+        }@else{
+        @for (item of resolvedApplications; track $index) {
+      <tr class="bg-white border-b hover:bg-gray-50">
+        <th scope="row" class="px-6 py-2 font-medium text-gray-900 whitespace-nowrap text-center">
+          {{item.nameCat}}
+        </th>
+        <td class="text-center mx-8">
+          {{item.created_at}}
+        </td>
+        <td class="text-center mx-8">
+          {{item.updated_at}}
+        </td>
+        <td class="text-center mx-8">
+          {{item.comments}}
+        </td>
+        <td class="text-center mx-8">
+          {{item.evaluation}}
+        </td>
+      </tr>
+      }
+      }
+    </tbody>
+  </table>
+</div>
